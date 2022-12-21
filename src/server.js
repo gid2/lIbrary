@@ -6,6 +6,7 @@ import store from 'session-file-store';
 import indexRouter from './routes/indexRouter';
 import jsxRender from './utils/jsxRender';
 import authRouter from './routes/authRouter';
+import apiRouter from './routes/apiRouter';
 
 const PORT = 3000;
 const app = express();
@@ -22,8 +23,8 @@ app.use(express.static('public'));
 
 const FileStore = store(session);
 const sessionConfig = {
-  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: process.env.SESSION_SECRET ?? 'oh_klahoma', // Секретное слово для шифрования, может быть любым
+  name: 'yammi_cookies', // Имя куки для хранения id сессии. По умолчанию - connect.sid
+  secret: process.env.SESSION_SECRET ?? 'uuueeeeee', // Секретное слово для шифрования, может быть любым
   resave: false, // Пересохранять ли куку при каждом запросе
   store: new FileStore(), // Место хранения сессий
   saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
@@ -44,6 +45,9 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/firstpage', indexRouter);
+app.use('/mainpage', indexRouter);
+app.use('/newbook', indexRouter);
+app.use('/api', apiRouter)
 
 
 app.listen(PORT, () => {

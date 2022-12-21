@@ -22,14 +22,14 @@ export default function Auth() {
       {' '}
       <form onSubmit={submitHandler}>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-          <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          <label style={{ marginTop: '30px', marginBottom: '30px' }} htmlFor="exampleInputEmail1" className="form-label"></label>
+          <input name="email" type="email" placeholder="Email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-          <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
+          <label htmlFor="exampleInputPassword1" className="form-label"></label>
+          <input name="password" type="password" placeholder="Password" className="form-control" id="exampleInputPassword1" />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button style={{ marginTop: '30px', marginBottom: '30px' }} type="submit" className="btn btn-success">авторизоваться</button>
       </form>
 
     </div>
