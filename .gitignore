@@ -128,5 +128,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-public/js/app.js
-public/js/vendor.js
+public/app.js
+public/vendor.js
