@@ -2,10 +2,10 @@ const path = require('path');
 
 const config = {
   entry: {
-    app: ['./src/components/index.jsx'],
+    app: ['./src/components/Main/index.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, 'public/js'),
+    path: path.resolve(__dirname, 'public'),
     globalObject: 'this',
     filename: '[name].js',
   },

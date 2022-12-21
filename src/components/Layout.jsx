@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticRouter } from 'react-router-dom/server';
-import App from './App';
+import App from './Main/App';
 
 export default function Layout({ initState }) {
   return (
@@ -22,12 +22,19 @@ export default function Layout({ initState }) {
         <title>Document</title>
       </head>
       <body>
-        <div id="root">
-          <StaticRouter location={initState.path}>
-            <App {...initState} />
-          </StaticRouter>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <div id="root">
+                <StaticRouter location={initState.path}>
+                  <App {...initState} />
+                </StaticRouter>
+              </div>
+            </div>
+          </div>
         </div>
       </body>
     </html>
   );
 }
+
