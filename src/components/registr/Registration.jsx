@@ -12,7 +12,7 @@ export default function Registration() {
     });
     if (response.ok) {
       console.log('git');
-      window.location.href = '/firstpage';
+      window.location.href = '/mainpage';
     } else if (
       response.status === 404
     ) {

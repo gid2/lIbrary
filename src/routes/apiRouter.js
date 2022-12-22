@@ -5,6 +5,7 @@ const router = Router();
 
 router.get('/firstpage', async (req, res) => {
   const allBooksFirstPage = await Book.findAll();
+  console.log(allBooksFirstPage, 'allBooksFirstPage------>');
   res.json(allBooksFirstPage);
 });
 
