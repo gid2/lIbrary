@@ -3,6 +3,7 @@ import { Book } from '../db/models';
 
 const router = express.Router();
 
+
 router.get('/', async (req, res) => {
   const oneBook = await Book.findAll();
   const initState = { oneBook };
@@ -10,8 +11,8 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  const initState = { title: 'Home' };
-  res.redirect('/auth/reg');
+  res.redirect('/firstpage');
 });
+
 
 export default router;

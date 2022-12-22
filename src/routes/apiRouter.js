@@ -15,6 +15,7 @@ router.get('/book/:id', async (req, res) => {
 
 router.get('/mainpage', async (req, res) => {
   const allbooksMainPage = await Book.findAll();
+  console.log('#$%$#%$#^$#^%$#%$');
   res.json(allbooksMainPage);
 });
 

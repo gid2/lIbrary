@@ -17,13 +17,19 @@ export default function App({ userId, oneBook }) {
         <Routes>
           <Route path="/mainpage" element={<Mainpage />} />
           <Route path="/newbook" element={<Newbook />} />
+<<<<<<< HEAD
           <Route path="/book" element={<Book oneBook={oneBook} />} />
+=======
+          <Route path="/book" element={<Book />} />
+          
+          
+>>>>>>> origin
         </Routes>
       ) : (
         <Routes>
+          <Route path="/firstpage" element={<Firstpage />} />
           <Route path="/auth/" element={<Auth />} />
           <Route path="/auth/reg" element={<Registration />} />
-          <Route path="/firstpage" element={<Firstpage />} />
         </Routes>
       )}
     </>
