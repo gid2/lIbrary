@@ -3,20 +3,24 @@ import { Book } from '../db/models';
 
 const router = Router();
 
-router.get('/firstpage', (req, res) => {
-    const allBooksFirstPage = Book.findAll()
-    res.json(allBooksFirstPage)
+router.get('/firstpage', async (req, res) => {
+  const allBooksFirstPage = await Book.findAll();
+  res.json(allBooksFirstPage);
 });
 
-router.get('/mainpage', (req, res) => {
-    const allbooksMainPage = Book.findAll()
-    res.json(allbooksMainPage)
+router.get('/mainpage', async (req, res) => {
+  const allbooksMainPage = await Book.findAll();
+  res.json(allbooksMainPage);
 });
 
-router.get('/newbook', (req, res) => {
-    const { name, title, author, img }  = req.body
-    const newbook = Book.create({name, title, author, img})
-    res.sendStatus(200)
+router.get('/newbook', async (req, res) => {
+  const {
+    name, title, author, img,
+  } = req.body;
+  const newbook = await Book.create({
+    name, title, author, img,
+  });
+  res.sendStatus(200);
 });
 
-export default router
+export default router;
