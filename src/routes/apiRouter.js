@@ -5,12 +5,12 @@ const router = Router();
 
 router.get('/firstpage', async (req, res) => {
   const allBooksFirstPage = await Book.findAll();
-  console.log(allBooksFirstPage, 'allBooksFirstPage------>');
   res.json(allBooksFirstPage);
 });
 
 router.get('/mainpage', async (req, res) => {
   const allbooksMainPage = await Book.findAll();
+  console.log('#$%$#%$#^$#^%$#%$');
   res.json(allbooksMainPage);
 });
 
