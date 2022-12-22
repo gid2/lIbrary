@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { Route } from 'react-router-dom';
 import { Book, Comment } from '../db/models';
 
 const router = Router();
@@ -19,7 +18,7 @@ router.get('/book/:id', async (req, res) => {
 router.post('/comment/:id', async (req, res) => {
   const { id } = req.params;
   const { comment } = req.body;
-  const book = await Comment.create({ comment, userId,  });
+  const book = await Comment.create({ comment, userId });
   res.json(book);
 });
 
