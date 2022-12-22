@@ -18,12 +18,12 @@ export default function App({ userId }) {
           <Route path="/mainpage" element={<Mainpage />} />
           <Route path="/newbook" element={<Newbook />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/firstpage" element={<Firstpage />} />
         </Routes>
       ) : (
         <Routes>
           <Route path="/auth/" element={<Auth />} />
           <Route path="/auth/reg" element={<Registration />} />
-          <Route path="/firstpage" element={<Firstpage />} />
         </Routes>
       )}
     </>

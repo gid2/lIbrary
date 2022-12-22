@@ -23,7 +23,7 @@ export default function Registration() {
     <form onSubmit={submitHandler}>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label"></label>
-        <input name="login" style={{ marginTop: '30px', marginBottom: '30px' }} placeholder="login" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <input name="login" style={{ marginTop: '30px', marginBottom: '20px' }} placeholder="login" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label"></label>
