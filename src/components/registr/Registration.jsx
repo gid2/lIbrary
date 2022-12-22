@@ -22,18 +22,18 @@ export default function Registration() {
   return (
     <form onSubmit={submitHandler}>
       <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">login</label>
-        <input name="login" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <label htmlFor="exampleInputEmail1" className="form-label"></label>
+        <input name="login" style={{ marginTop: '30px', marginBottom: '20px' }} placeholder="login" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
       </div>
       <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-        <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <label htmlFor="exampleInputEmail1" className="form-label"></label>
+        <input name="email" placeholder="Email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
       </div>
       <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-        <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
+        <label htmlFor="exampleInputPassword1" className="form-label"></label>
+        <input name="password" placeholder="Password" type="password" className="form-control" id="exampleInputPassword1" />
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" style={{ marginTop: '30px', marginBottom: '30px' }} className="btn btn-success">зарегистрироваться</button>
     </form>
   );
 }
