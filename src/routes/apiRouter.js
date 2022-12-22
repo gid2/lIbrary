@@ -12,7 +12,6 @@ router.get('/firstpage', async (req, res) => {
 router.get('/book/:id', async (req, res) => {
   const { id } = req.params;
   const oneBook = await Book.findByPk(id, { include: [Comment]});
-  console.log(oneBook);
   res.json(oneBook);
 });
 
@@ -25,14 +24,14 @@ router.post('/comment/:id', async (req, res) => {
 
 router.get('/mainpage', async (req, res) => {
   const allbooksMainPage = await Book.findAll();
-  console.log('#$%$#%$#^$#^%$#%$');
   res.json(allbooksMainPage);
 });
 
-router.get('/newbook', async (req, res) => {
+router.post('/newbook', async (req, res) => {
   const {
     name, title, author, img,
   } = req.body;
+  console.log(req.body, 'req.body from server ---------!!');
   const newbook = await Book.create({
     name, title, author, img,
   });
