@@ -11,7 +11,7 @@ router.get('/firstpage', async (req, res) => {
 
 router.get('/book/:id', async (req, res) => {
   const { id } = req.params;
-  const oneBook = await Book.findByPk(id, { include: [C});
+  const oneBook = await Book.findByPk(id, { include: [Comment]});
   console.log(oneBook);
   res.json(oneBook);
 });
