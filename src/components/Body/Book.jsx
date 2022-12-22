@@ -1,24 +1,63 @@
-import React from 'react';
-
-// const itachi = require('../../../public/icons/itachi.png');
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function Book() {
-  return (
+  const [book, setBook] = useState([]);
+  const { id } = useParams();
+  useEffect(() => {
+    fetch(`/api/book/${id}`)
+      .then((response) => response.json())
+      .then((data) => setBook(data));
+  }, []);
 
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`/api/comment/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    });
+    if (response.ok) {
+      window.location.href = `/api/book/${id}`;
+    } else if (
+      response.status === 404
+    ) {
+      alert('error');
+    }
+  };
+
+  return (
     <>
-      <img src="///" className="img-fluid" alt="" />
-      <button style={{ marginTop: '30px', marginBottom: '30px' }}>
-        {' '}
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
-          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-          <path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z" />
-        </svg>
-      </button>
       <div className="mb-3">
+        <img src={book.img} className="img-fluid" alt="" />
         <label htmlFor="exampleInputEmail1" className="form-label" />
-        <input name="name" style={{ marginTop: '30px', marginBottom: '30px' }} placeholder="" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        <button>добавить</button>
       </div>
+      <div>
+        {' '}
+        Название:
+        <span>
+          {book.name}
+        </span>
+      </div>
+      <div>
+        {' '}
+        Author:
+        <span>
+          {book.author}
+        </span>
+      </div>
+      <div>
+        <span>
+          {book.title}
+        </span>
+      </div>
+      <form onSubmit={submitHandler}>
+        {' '}
+        <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <button type="submit">добавить</button>
+      </form>
     </>
   );
 }

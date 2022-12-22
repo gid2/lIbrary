@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
 export default function Firstpage() {
   const [allBooksFirstPage, setAllBooksFirstPage] = useState([]);
 
-  const { id } = useParams()
+  const { id } = useParams();
   console.log(id, '---------++');
 
   useEffect(() => {
     fetch('/api/firstpage')
       .then((response) => response.json())
       .then((data) => setAllBooksFirstPage(data));
-  }, [])
+  }, []);
   // сюда приходят все книги с базы данныхс ручки в apirouter /registration
   // то что лежит в переменной allBooksFirstPage
   // нужно накатить сиды и вытащить их
@@ -19,13 +19,15 @@ export default function Firstpage() {
   return (
     <>
       <h1>hello</h1>
-      {allBooksFirstPage?.map((el) => <div className="card" style={{marginLeft: '210px', width: '18rem', marginBottom: '30px'}} key={el.id}>
-        <img src={el.img} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{el.name}</h5>
-          <p className="card-text">{el.title}</p>
+      {allBooksFirstPage.map((el) => (
+        <div className="card" style={{ marginLeft: '210px', width: '18rem', marginBottom: '30px' }} key={el.id}>
+          <img src={el.img} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <h5 className="card-title">{el.name}</h5>
+            <p className="card-text">{el.title}</p>
+          </div>
         </div>
-      </div>)}
+      ))}
     </>
   );
 }
