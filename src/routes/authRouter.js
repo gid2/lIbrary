@@ -59,7 +59,7 @@ router.get('/', (req, res) => {
 router.get('/logout', async (req, res) => {
   req.session.destroy();
   res.clearCookie('user_sid');
-  res.redirect('/auth');
+  res.redirect('/firstpage');
 });
 
 export default router;
