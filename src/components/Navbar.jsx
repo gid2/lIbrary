@@ -7,7 +7,7 @@ export default function Navbar({ userId }) {
         {userId
           ? (
             <>
-              <a className="navbar-brand" href="/">Navbar</a>
+              <a className="navbar-brand" href="/mainpage">Navbar</a>
               <a className="nav-link" href="/auth/logout">logout</a>
             </>
           )
@@ -24,7 +24,6 @@ export default function Navbar({ userId }) {
                   <li className="nav-item">
                     <a className="nav-link" href="/auth">авторизация</a>
                   </li>
-
                 </ul>
               </div>
             </div>

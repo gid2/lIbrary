@@ -23,19 +23,19 @@ export default function Newbook() {
     <form onSubmit={AddBooker}>
       <div style={{ marginTop: '30px', marginBottom: '30px' }}>Add new book</div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="название" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+        <input type="text" name="name" className="form-control" placeholder="название" aria-label="Example text with button addon" aria-describedby="button-addon1" />
       </div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="автор" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+        <input type="text" name="title" className="form-control" placeholder="автор" aria-label="Example text with button addon" aria-describedby="button-addon1" />
       </div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="комментарий" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+        <input type="text" name="author" className="form-control" placeholder="комментарий" aria-label="Example text with button addon" aria-describedby="button-addon1" />
       </div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="ссылка с фото для обложки" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+        <input type="text" name="img" className="form-control" placeholder="ссылка с фото для обложки" aria-label="Example text with button addon" aria-describedby="button-addon1" />
       </div>
 
-      <button style={{ marginTop: '30px', marginBottom: '30px' }} type="submit" className="btn btn-success">Add book</button>
+      <button type="submit" className="btn btn-success">Add book</button>
     </form>
   );
 }
