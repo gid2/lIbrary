@@ -18,11 +18,10 @@ export default function Mainpage() {
 
   return (
 
-    <>
-      <div className="container text-center" >
-        <div className="row">
-          <div className="col">
-            {
+    <div className="container text-center">
+      <div className="row">
+        <div className="col">
+          {
               allbooksMainPage.map((el) => (
                 <div className="card" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
                   <img src={el.img} className="card-img-top" alt="..." />
@@ -34,12 +33,11 @@ export default function Mainpage() {
                 </div>
               ))
             }
-          </div>
-          <div class="col">
-            <button type="button" style={{ position: 'fixed', marginTop: '270px' }} className="btn btn-primary" disabled data-bs-toggle="button">lобавить книгу</button>
-          </div>
+        </div>
+        <div className="col">
+          <button type="button" style={{ position: 'fixed', marginTop: '270px' }} className="btn btn-primary" disabled data-bs-toggle="button">добавить книгу</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
