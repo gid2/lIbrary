@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function Book() {
-  const [book, setBook] = useState([]);
+  const [book, setBook] = useState({});
+  console.log(book.Comments);
   const { id } = useParams();
   useEffect(() => {
     fetch(`/api/book/${id}`)
@@ -20,7 +21,7 @@ export default function Book() {
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
     if (response.ok) {
-      window.location.href = `/api/book/${id}`;
+      window.location.href = `/book/${id}`;
     } else if (
       response.status === 404
     ) {
@@ -57,6 +58,9 @@ export default function Book() {
         {' '}
         <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
         <button type="submit">добавить</button>
+        <ul>
+          {book?.Comments?.map((el) => <li>{el.comment}</li>)}
+        </ul>
       </form>
     </>
   );
