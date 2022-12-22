@@ -1,9 +1,12 @@
 import express from 'express';
+import { Book } from '../db/models';
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  res.render('Layout');
+  const oneBook = await Book.findAll();
+  const initState = { oneBook };
+  res.render('Layout', initState);
 });
 
 router.get('/', (req, res) => {

@@ -8,7 +8,7 @@ import Navbar from '../Navbar';
 import Auth from '../registr/Auth';
 import Registration from '../registr/Registration';
 
-export default function App({ userId }) {
+export default function App({ userId, oneBook }) {
   return (
     <>
       <Navbar userId={userId} />
@@ -17,7 +17,7 @@ export default function App({ userId }) {
         <Routes>
           <Route path="/mainpage" element={<Mainpage />} />
           <Route path="/newbook" element={<Newbook />} />
-          <Route path="/book" element={<Book />} />
+          <Route path="/book" element={<Book oneBook={oneBook} />} />
         </Routes>
       ) : (
         <Routes>
