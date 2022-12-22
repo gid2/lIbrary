@@ -10,7 +10,7 @@ router.get('/firstpage', async (req, res) => {
 
 router.get('/book/:id', async (req, res) => {
   const { id } = req.params;
-  const oneBook = await Book.findByPk(id, { include: [Comment]});
+  const oneBook = await Book.findByPk(id, { include: [Comment] });
   res.json(oneBook);
 });
 
@@ -31,10 +31,18 @@ router.post('/newbook', async (req, res) => {
     name, title, author, img,
   } = req.body;
   console.log(req.body, 'req.body from server ---------!!');
+  const userId = req.session.user.id;
   const newbook = await Book.create({
-    name, title, author, img,
+    name, title, author, img, userId,
   });
   res.sendStatus(200);
+});
+
+router.get('/favourite', async (req, res) => {
+  console.log(req.session.user.id, 'oboz');
+  const favouritebooks = await Book.findAll({ where: { userId: req.session.user.id } });
+  console.log(favouritebooks, 'krakra');
+  res.json(favouritebooks);
 });
 
 export default router;

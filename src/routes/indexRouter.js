@@ -23,5 +23,8 @@ router.get('/book', async (req, res) => {
 router.get('/book/:id', async (req, res) => {
   res.render('Layout');
 });
+router.get('/favourite', async (req, res) => {
+  res.render('Layout');
+});
 
 export default router;

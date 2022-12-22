@@ -7,6 +7,7 @@ import Newbook from '../Body/Newbook';
 import Navbar from '../Navbar';
 import Auth from '../registr/Auth';
 import Registration from '../registr/Registration';
+import Favourite from '../Body/Favourite';
 
 export default function App({ userId }) {
   return (
@@ -19,6 +20,7 @@ export default function App({ userId }) {
           <Route path="/newbook" element={<Newbook />} />
           <Route path="/book" element={<Book />} />
           <Route path="/book/:id" element={<Book />} />
+          <Route path="/favourite" element={<Favourite />} />
         </Routes>
       ) : (
         <Routes>

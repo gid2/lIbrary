@@ -1,7 +1,6 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    
     await queryInterface.bulkInsert('Books', [
       {
         name: 'Мой театр', title: 'Николай Цискаридзе — яркая, харизматичная личность, чья эрудиция, независимость и острота суждений превращают каждое высказывание в событие.Автобиография «Мой театр» создана на основе дневника 1985–2003 гг. Это живой, полный тонкой иронии, юмора, а порой и грусти рассказ о себе, о времени и балете', author: 'Цискаридзе Н.М.', img: '/icons/1_teatr.png', userId: 9,
@@ -21,6 +20,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-   
+
   },
 };

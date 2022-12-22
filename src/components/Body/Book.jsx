@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 export default function Book() {
   const [book, setBook] = useState({});
-  console.log(book.Comments);
+  consolema.log(book.Comments);
   const { id } = useParams();
   useEffect(() => {
     fetch(`/api/book/${id}`)
