@@ -10,7 +10,7 @@ router.get('/firstpage', async (req, res) => {
 
 router.get('/book/:id', async (req, res) => {
   const { id } = req.params;
-  const oneBook = await Book.findByPk(id, { include: [Comment] });
+  const oneBook = await Book.findByPk(id, { include: Comment });
   console.log(oneBook);
   res.json(oneBook);
 });
@@ -18,7 +18,7 @@ router.get('/book/:id', async (req, res) => {
 router.post('/comment/:id', async (req, res) => {
   const { id } = req.params;
   const { comment } = req.body;
-  const book = await Comment.create({ comment, userId });
+  const book = await Comment.create({ comment, userId: req.session.user.id, bookId: id });
   res.json(book);
 });
 
