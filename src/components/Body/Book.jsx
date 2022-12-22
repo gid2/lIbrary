@@ -5,6 +5,7 @@ export default function Book() {
   const [book, setBook] = useState({});
   const [likes, setLike] = useState(false);
   console.log(book.Comments);
+
   const { id } = useParams();
   useEffect(() => {
     fetch(`/api/book/${id}`)

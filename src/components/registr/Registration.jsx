@@ -11,7 +11,6 @@ export default function Registration() {
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
     if (response.ok) {
-      console.log('git');
       window.location.href = '/mainpage';
     } else if (
       response.status === 404

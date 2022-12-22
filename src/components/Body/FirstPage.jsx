@@ -5,7 +5,6 @@ export default function Firstpage() {
   const [allBooksFirstPage, setAllBooksFirstPage] = useState([]);
 
   const { id } = useParams();
-  console.log(id, '---------++');
 
   useEffect(() => {
     fetch('/api/firstpage')
