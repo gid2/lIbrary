@@ -1,18 +1,27 @@
 import express from 'express';
-import { Book } from '../db/models';
 
 const router = express.Router();
 
-
 router.get('/', async (req, res) => {
-  const oneBook = await Book.findAll();
-  const initState = { oneBook };
-  res.render('Layout', initState);
+  res.render('Layout');
 });
-
 router.get('/', (req, res) => {
   res.redirect('/firstpage');
 });
-
+router.get('/firstpage', async (req, res) => {
+  res.render('Layout');
+});
+router.get('/mainpage', async (req, res) => {
+  res.render('Layout');
+});
+router.get('/newbook', async (req, res) => {
+  res.render('Layout');
+});
+router.get('/book', async (req, res) => {
+  res.render('Layout');
+});
+router.get('/book/:id', async (req, res) => {
+  res.render('Layout');
+});
 
 export default router;
