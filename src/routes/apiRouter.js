@@ -31,8 +31,9 @@ router.post('/newbook', async (req, res) => {
     name, title, author, img,
   } = req.body;
   console.log(req.body, 'req.body from server ---------!!');
+  const userId = req.session.user.id
   const newbook = await Book.create({
-    name, title, author, img,
+    name, title, author, img, userId
   });
   res.sendStatus(200);
 });
