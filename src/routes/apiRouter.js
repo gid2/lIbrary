@@ -24,4 +24,10 @@ router.get('/newbook', async (req, res) => {
   res.sendStatus(200);
 });
 
+router.get('/favourite', async (req, res) => {
+  const favouritebooks = await Book.findAll();
+  console.log(favouritebooks);
+  res.json(favouritebooks);
+});
+
 export default router;
