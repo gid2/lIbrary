@@ -36,7 +36,7 @@ export default function Newbook() {
           <input type="text" name='img' className="form-control" placeholder="ссылка с фото для обложки" aria-label="Example text with button addon" aria-describedby="button-addon1" />
         </div>
 
-        <button style={{ marginTop: '30px', marginBottom: '30px' }} type="submit" className="btn btn-success">Add book</button>
+        <button  type="submit" className="btn btn-success">Add book</button>
       </form>
     </>
   );

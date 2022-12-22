@@ -36,7 +36,7 @@ export default function Mainpage() {
             }
           </div>
           <div class="col">
-            <button type="button" style={{ position: 'fixed', marginTop: '270px' }} className="btn btn-primary" disabled data-bs-toggle="button">lобавить книгу</button>
+            <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '250px'}} href="/newbook" role="button">Add book</a>
           </div>
         </div>
       </div>
