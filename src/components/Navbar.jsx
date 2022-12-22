@@ -24,7 +24,6 @@ export default function Navbar({ userId }) {
                   <li className="nav-item">
                     <a className="nav-link" href="/auth">авторизация</a>
                   </li>
-
                 </ul>
               </div>
             </div>
