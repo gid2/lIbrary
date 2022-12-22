@@ -10,6 +10,10 @@ export default function Favourite() {
       .then((data) => setfavouritebooks(data));
   }, []);
 
+  //тут нужно добавить второй юз эффект который при загрузки страницы 
+  //будет отрисовывать все фильмы добавленные в избранное 
+  // 
+
   return (
 
     <div className="container text-center">

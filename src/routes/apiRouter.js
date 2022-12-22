@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Book, Comment } from '../db/models';
+import { Book, Comment, Favourites  } from '../db/models';
 
 const router = Router();
 
@@ -36,6 +36,15 @@ router.post('/newbook', async (req, res) => {
   });
   res.sendStatus(200);
 });
+
+
+router.get('/book/:id', async (req, res) => {
+  const { id } = req.params;
+  const favouriteBook  = await Book.findByPk(id);
+  console.log(favouriteBook, 'favouriteBook---++');
+  const favouriteBookWriter = await Favourites.create({favouriteBook})
+  console.log(favouriteBookWriter, '------favouriteBookWriter??');
+}); //это ручка которая записывает в базу книгу при нажатии кнопки избранное 
 
 router.get('/favourite', async (req, res) => {
   const favouritebooks = await Book.findAll({ where: { userId: req.session.user.id } });
