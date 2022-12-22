@@ -22,20 +22,20 @@ export default function Mainpage() {
       <div className="row">
         <div className="col">
           {
-              allbooksMainPage.map((el) => (
-                <div className="card" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
-                  <img src={el.img} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{el.name}</h5>
-                    <p className="card-text">{el.title}</p>
-                    <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
-                  </div>
+            allbooksMainPage.map((el) => (
+              <div className="card" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
+                <img src={el.img} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{el.name}</h5>
+                  <p className="card-text">{el.title}</p>
+                  <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
                 </div>
-              ))
-            }
+              </div>
+            ))
+          }
         </div>
         <div className="col">
-          <button type="button" style={{ position: 'fixed', marginTop: '270px' }} className="btn btn-primary" disabled data-bs-toggle="button">добавить книгу</button>
+          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Add book</a>
         </div>
       </div>
     </div>
