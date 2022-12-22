@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function Firstpage() {
   const [allBooksFirstPage, setAllBooksFirstPage] = useState([]);
-  console.log(allBooksFirstPage, 'данные пришли сюда ////////');
+
+  const { id } = useParams();
+  console.log(id, '---------++');
 
   useEffect(() => {
     fetch('/api/firstpage')

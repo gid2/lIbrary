@@ -44,11 +44,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/firstpage', indexRouter);
-app.use('/mainpage', indexRouter);
-app.use('/newbook', indexRouter);
 app.use('/api', apiRouter);
-app.use('/book', indexRouter);
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);
