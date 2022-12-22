@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { Route } from 'react-router-dom';
 import { Book, Comment } from '../db/models';
 
 const router = Router();
