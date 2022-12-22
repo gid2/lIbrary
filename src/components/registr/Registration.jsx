@@ -10,8 +10,9 @@ export default function Registration() {
       },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     });
-    if (response.status === 200) {
-      window.location = '/';
+    if (response.ok) {
+      console.log('git');
+      window.location.href = '/firstpage';
     } else if (
       response.status === 404
     ) {

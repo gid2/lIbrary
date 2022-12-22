@@ -3,9 +3,9 @@ import morgan from 'morgan';
 import path from 'path';
 import session from 'express-session';
 import store from 'session-file-store';
-import indexRouter from './routes/index';
+import indexRouter from './routes/indexRouter';
 import jsxRender from './utils/jsxRender';
-import authRouter from './routes/auth';
+import authRouter from './routes/authRouter';
 
 const PORT = 3000;
 const app = express();
@@ -43,6 +43,8 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/firstpage', indexRouter);
+
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);
