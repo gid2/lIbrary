@@ -30,7 +30,6 @@ router.post('/newbook', async (req, res) => {
   const {
     name, title, author, img,
   } = req.body;
-  console.log(req.body, 'req.body from server ---------!!');
   const userId = req.session.user.id;
   const newbook = await Book.create({
     name, title, author, img, userId,
@@ -39,9 +38,7 @@ router.post('/newbook', async (req, res) => {
 });
 
 router.get('/favourite', async (req, res) => {
-  console.log(req.session.user.id, 'oboz');
   const favouritebooks = await Book.findAll({ where: { userId: req.session.user.id } });
-  console.log(favouritebooks, 'krakra');
   res.json(favouritebooks);
 });
 

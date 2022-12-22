@@ -3,7 +3,6 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function Mainpage() {
   const [allbooksMainPage, setAllbooksMainPage] = useState([]);
-  console.log(allbooksMainPage, '_+_+_+_+_+_+__');
 
   const Navigate = useNavigate();
 
