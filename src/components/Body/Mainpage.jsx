@@ -25,7 +25,7 @@ export default function Mainpage() {
         и компонент с рейтигом книги, и в низу добавить кнопку Добавать книгу
       </h3>
 
-      {allbooksMainPage.map((el) => <div className="card" style={{ marginLeft: '210px', width: '18rem', marginBottom: '30px' }} key={el.id}>
+      {allbooksMainPage?.map((el) => <div className="card" style={{ marginLeft: '210px', width: '18rem', marginBottom: '30px' }} key={el.id}>
         <img src={el.img} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{el.name}</h5>

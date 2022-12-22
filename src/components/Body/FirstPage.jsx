@@ -19,7 +19,7 @@ export default function Firstpage() {
   return (
     <>
       <h1>hello</h1>
-      {allBooksFirstPage.map((el) => <div className="card" style={{marginLeft: '210px', width: '18rem', marginBottom: '30px'}} key={el.id}>
+      {allBooksFirstPage?.map((el) => <div className="card" style={{marginLeft: '210px', width: '18rem', marginBottom: '30px'}} key={el.id}>
         <img src={el.img} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{el.name}</h5>
