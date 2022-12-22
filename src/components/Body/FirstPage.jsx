@@ -1,28 +1,22 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState } from 'react';
 
 export default function Firstpage() {
-    const [allbooks, setAllbooks] = useState([])
+  const [allbooks, setAllbooks] = useState([]);
 
-    const response = fetch('/.....')
-        .then((response) => response.json())
-        .then((data) => setAllbooks(data))
+  const response = fetch('/api/registration')
+    .then((response) => response.json())
+    .then((data) => setAllbooks(data));
+    // сюда приходят все книги с базы данныхс ручки в apirouter /registration
+    // то что лежит в переменной allBooksFirstPage
+    // нужно накатить сиды и вытащить их
 
-    //что придет с базы данных ? 
-    return (
-        <>
-            <h1>hello</h1>
-            {/* {
-                allbooks.map((el) =>  <div className={el.name} style="width: 18rem;" />
-                       <img src="..." className="card-img-top" alt="..." />
-            <div className="card-body" />
-            <h5 className="card-title">name film </h5>
-            <p className="card-text">{el.title}</p>
-            <a href="/...." className="btn btn-primary">go about book</a>
-            
-            // лайки
-                )
-            } */}
-        </>
-    )
+  return (
+    <>
+      <h1>hello</h1>
+      <h3>
+        сюда подать компонент из бута, карточку для отрисовки всех фильмов и какой
+        то компонент для рейтинга книги
+      </h3>
+    </>
+  );
 }
