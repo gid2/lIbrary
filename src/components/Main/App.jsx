@@ -19,6 +19,7 @@ export default function App({ userId }) {
           <Route path="/newbook" element={<Newbook />} />
           <Route path="/book" element={<Book />} />
           <Route path="/book/:id" element={<Book />} />
+          <Route path="/like/:id" element={<Book />} />
         </Routes>
       ) : (
         <Routes>

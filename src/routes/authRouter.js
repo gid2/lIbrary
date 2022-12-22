@@ -15,7 +15,7 @@ router.get('/login', (req, res) => {
 
 router.post('/reg', async (req, res) => {
   try {
-    console.log(req.body, 'reqbody');
+    // console.log(req.body, 'reqbody');
     const { login, email, password: pass } = req.body;
     const password = await bcrypt.hash(pass, 7);
     const currUser = await User.create({ login, email, password });
@@ -31,7 +31,7 @@ router.post('/reg', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  console.log(req.body, 'reQBODY');
+  // console.log(req.body, 'reQBODY');
   const { email, password } = req.body;
   const currUser = await User.findOne({ where: { email } });
   if (currUser) {
