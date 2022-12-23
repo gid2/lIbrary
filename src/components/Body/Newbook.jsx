@@ -21,7 +21,7 @@ export default function Newbook() {
 
   return (
     <form onSubmit={AddBooker}>
-      <div style={{ marginTop: '30px', marginBottom: '30px' }}>Add new book</div>
+      <div style={{ marginTop: '30px', marginBottom: '30px' }}>Поделись своей книгой</div>
       <div className="input-group mb-3">
         <input type="text" name="name" className="form-control" placeholder="название" aria-label="Example text with button addon" aria-describedby="button-addon1" />
       </div>

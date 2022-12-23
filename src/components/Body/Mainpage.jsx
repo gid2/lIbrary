@@ -57,7 +57,7 @@ export default function Mainpage() {
                 <div className="card-body">
                   <h5 className="card-title">{el.name}</h5>
                   <p className="card-text">{el.title}</p>
-                  <a className="btn btn-primary" style={{ marginBottom: " 7px"  }} onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
+                  <a className="btn btn-primary" style={{ marginBottom: ' 7px' }} onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
                   <form onSubmit={(e) => submitHendler(e, el.id)}>
                     <button type="submit" text-al>
                       <i className="bi bi-heart-fill" />
