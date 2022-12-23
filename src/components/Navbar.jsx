@@ -9,6 +9,7 @@ export default function Navbar({ userId }) {
             <>
               <a className="navbar-brand" href="/mainpage">Navbar</a>
               <a className="nav-link" href="/auth/logout">logout</a>
+              <a className="nav-link" href="/favourite">Lk</a>
             </>
           )
           : (
@@ -24,6 +25,7 @@ export default function Navbar({ userId }) {
                   <li className="nav-item">
                     <a className="nav-link" href="/auth">авторизация</a>
                   </li>
+
                 </ul>
               </div>
             </div>
@@ -34,6 +36,4 @@ export default function Navbar({ userId }) {
   );
 }
 
-
-
-//comments for push
+// comments for push
