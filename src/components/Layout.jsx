@@ -28,7 +28,7 @@ export default function Layout({ initState }) {
         <div className="container text-center">
           <div className="row">
             <div className="col">
-              <div id="root">
+              <div id="root" style={{ backgroundColor: '#ece6cd' }}>
                 <StaticRouter location={initState.path}>
                   <App {...initState} />
                 </StaticRouter>

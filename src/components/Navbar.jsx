@@ -3,12 +3,20 @@ import React from 'react';
 export default function Navbar({ userId }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar" style={{ backgroundColor: '#f9ac67' }}>
         {userId
           ? (
             <>
-              <a className="navbar-brand" href="/mainpage">Navbar</a>
-              <a className="nav-link" href="/auth/logout">logout</a>
+              <img src="/icons/icona.png" alt="КНИЖНЫЙ ЧЕРВЬ" style={{ width: '120px', height: '90px', marginLeft: '30px' }} />
+              <a className="navbar-brand" href="/mainpage"><div style={{ fontSize: '58px', fontFamily: 'Brush Script MT', marginTop: '10px' }}>HOME</div></a>
+              <a className="nav-link" href="/auth/logout">
+                <div style={{
+                  fontSize: '58px', fontFamily: 'Brush Script MT', marginRight: '30px', marginTop: '10px',
+                }}
+                >
+                  EXIT
+                </div>
+              </a>
             </>
           )
           : (
@@ -34,6 +42,4 @@ export default function Navbar({ userId }) {
   );
 }
 
-
-
-//comments for push
+// comments for push
