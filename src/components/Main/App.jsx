@@ -20,7 +20,7 @@ export default function App({ userId, login }) {
           <Route path="/newbook" element={<Newbook />} />
           <Route path="/book" element={<Book />} />
           <Route path="/book/:id" element={<Book />} />
-          <Route path="/like/:id" element={<Book />} />
+          <Route path="/like/:id" element={<Mainpage />} />
           <Route path="/login/:id" element={<Book login={login} />} />
           <Route path="/favourite" element={<Favourite />} />
         </Routes>
