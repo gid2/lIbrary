@@ -31,7 +31,7 @@ router.post('/login/:id', async (req, res) => {
   res.json(login);
 });
 
-router.post('/api/like/id', async (req, res) => {
+router.post('/like/:id', async (req, res) => {
   const currLike = 0;
   const { id } = req.params;
   const likes = await Like.create({ like: currLike, bookId: id, userId: req.session.user.id });

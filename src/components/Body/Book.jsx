@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 export default function Book() {
   const [book, setBook] = useState({});
   const [logins, setLogins] = useState([]);
-  const [likes, setLike] = useState('');
 
   const { id } = useParams();
   useEffect(() => {
