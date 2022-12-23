@@ -63,6 +63,8 @@ export default function Mainpage() {
         </div>
         <div className="col">
           <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Add book</a>
+        </div> <div className="col">
+          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">линый кабинет</a>
         </div>
       </div>
     </div>

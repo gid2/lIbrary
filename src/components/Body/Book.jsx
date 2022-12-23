@@ -38,48 +38,56 @@ export default function Book() {
     }
   };
 
-  return (
-    <>
-      <div className="mb-3">
-        <img src={book.img} className="img-fluid" alt="" />
-        <label htmlFor="exampleInputEmail1" className="form-label" />
-      </div>
-      <div className="cardcard text-bg-secondary mb-3">
-        <div>
-          {' '}
-          Название:
-          <span>
-            {book.name}
-          </span>
-        </div>
-        <div>
-          {' '}
-          Author:
-          <span>
-            {book.author}
-          </span>
-        </div>
-        <div>
-          <span>
-            {book.title}
-          </span>
-        </div>
-      </div>
-      <form onSubmit={submitHandler}>
-        {' '}
-        <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        <button type="submit" className="input-group-text">добавить</button>
-        {' '}
-        {logins?.map((el) => (
-          <div>
-            <h3>
-              {el?.User?.login}
-              :
-              {el?.comment}
-            </h3>
+  const favouriteAdder = () => {
+    fetch(`/api/book/${id}`)
+      .then((response) => response.json())
+      .then((data) => setBook(data));
+    if (response.ok) {
+      window.location.href = '/favourite';
+    } else if (
+      alert('книга не добавлена')) {
+      return (
+        <>
+          <div className="mb-3">
+            <img src={book.img} className="img-fluid" alt="" />
+            <label htmlFor="exampleInputEmail1" className="form-label" />
           </div>
-        ))}
-      </form>
-    </>
-  );
+          <div>
+            {' '}
+            Название:
+            <span>
+              {book.name}
+            </span>
+          </div>
+          <div>
+            {' '}
+            Author:
+            <span>
+              {book.author}
+            </span>
+          </div>
+          <div>
+            <span>
+              {book.title}
+            </span>
+          </div>
+          <form onSubmit={submitHandler}>
+            {' '}
+            <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <button type="submit" className="input-group-text">добавить</button>
+            {' '}
+            {logins?.map((el) => (
+              <div>
+                <h3>
+                  {el?.User?.login}
+                  :
+                  {el?.comment}
+                </h3>
+              </div>
+            ))}
+          </form>
+        </>
+      );
+    }
+  };
 }
