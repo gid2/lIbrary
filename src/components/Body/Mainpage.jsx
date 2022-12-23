@@ -8,9 +8,9 @@ export default function Mainpage() {
 
   const Navigate = useNavigate();
   const { id } = useParams();
-  const submitHendler = async (e) => {
+  const submitHendler = async (e, supperId) => {
     e.preventDefault();
-    const response = await fetch(`/api/like/${id}`, {
+    const response = await fetch(`/api/like/${supperId}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -48,7 +48,7 @@ export default function Mainpage() {
                   <h5 className="card-title">{el.name}</h5>
                   <p className="card-text">{el.title}</p>
                   <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
-                  <form onSubmit={submitHendler}>
+                  <form onSubmit={(e) => submitHendler(e, el.id)}>
                     <button type="submit">
                       <i className="bi bi-heart-fill" />
                       <svg color={likes} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
