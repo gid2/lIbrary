@@ -7,6 +7,7 @@ export default function Navbar({ userId }) {
         {userId
           ? (
             <>
+<<<<<<< HEAD
               <img src="/icons/icona.png" alt="КНИЖНЫЙ ЧЕРВЬ" style={{ width: '120px', height: '90px', marginLeft: '30px' }} />
               <a className="navbar-brand" href="/mainpage"><div style={{ fontSize: '58px', fontFamily: 'Brush Script MT', marginTop: '10px' }}>HOME</div></a>
               <a className="nav-link" href="/auth/logout">
@@ -17,6 +18,11 @@ export default function Navbar({ userId }) {
                   EXIT
                 </div>
               </a>
+=======
+              <a className="navbar-brand" href="/mainpage">Navbar</a>
+              <a className="nav-link" href="/auth/logout">logout</a>
+              <a className="nav-link" href="/favourite">Lk</a>
+>>>>>>> main
             </>
           )
           : (
@@ -32,6 +38,7 @@ export default function Navbar({ userId }) {
                   <li className="nav-item">
                     <a className="nav-link" href="/auth">авторизация</a>
                   </li>
+
                 </ul>
               </div>
             </div>
