@@ -8,7 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      like: { type: Sequelize.BOOLEAN },
+      like: {
+        type: Sequelize.INTEGER,
+      },
       bookId: {
         type: Sequelize.INTEGER,
         references: {

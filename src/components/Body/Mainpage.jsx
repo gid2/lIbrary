@@ -1,10 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 export default function Mainpage() {
   const [allbooksMainPage, setAllbooksMainPage] = useState([]);
+  const [likes, setLike] = useState('');
+  console.log(allbooksMainPage, '_+_+_+_+_+_+__');
 
   const Navigate = useNavigate();
+  const { id } = useParams();
+  const submitHendler = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`/api/like/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    });
+    if (response.ok) {
+      setLike(`${likes}yellow`);
+    } else if (
+      response.status === 404
+    ) {
+      alert('error');
+    }
+  };
 
   useEffect(() => {
     fetch('/api/mainpage')
@@ -22,12 +42,20 @@ export default function Mainpage() {
         <div className="col">
           {
             allbooksMainPage.map((el) => (
-              <div className="card" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
+              <div className="cardcard text-bg-secondary mb-3" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
                 <img src={el.img} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{el.name}</h5>
                   <p className="card-text">{el.title}</p>
                   <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
+                  <form onSubmit={submitHendler}>
+                    <button type="submit">
+                      <i className="bi bi-heart-fill" />
+                      <svg color={likes} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                      </svg>
+                    </button>
+                  </form>
                 </div>
               </div>
             ))
