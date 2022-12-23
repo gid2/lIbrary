@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 export default function Favourite() {
   const [favouritebooks, setfavouritebooks] = useState([]);
 
-
   useEffect(() => {
     fetch('/api/favourite')
       .then((response) => response.json())

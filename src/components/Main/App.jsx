@@ -9,7 +9,7 @@ import Auth from '../registr/Auth';
 import Registration from '../registr/Registration';
 import Favourite from '../Body/Favourite';
 
-export default function App({ userId }) {
+export default function App({ userId, login }) {
   return (
     <>
       <Navbar userId={userId} />
@@ -21,6 +21,7 @@ export default function App({ userId }) {
           <Route path="/book" element={<Book />} />
           <Route path="/book/:id" element={<Book />} />
           <Route path="/like/:id" element={<Book />} />
+          <Route path="/login/:id" element={<Book login={login} />} />
           <Route path="/favourite" element={<Favourite />} />
         </Routes>
       ) : (
