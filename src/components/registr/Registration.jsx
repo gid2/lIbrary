@@ -20,10 +20,9 @@ export default function Registration() {
   };
   return (
     <>
-    <h2 style={{ marginTop: '30px', marginBottom: '30px'  }}>
+    <h2 style={{ marginTop: '30px', marginBottom: '15px' }}>
       регистрация нового пользователя
     </h2>
-    <div style={{ width: '50%',  marginLeft: '320px'}} >
     <form onSubmit={submitHandler}>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label"></label>
@@ -39,7 +38,6 @@ export default function Registration() {
       </div>
       <button type="submit" style={{ marginTop: '30px', marginBottom: '30px' }} className="btn btn-success">зарегистрироваться</button>
     </form>
-    </div>
     </>
   );
 }
