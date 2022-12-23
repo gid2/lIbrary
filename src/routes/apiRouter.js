@@ -25,9 +25,7 @@ router.post('/comment/:id', async (req, res) => {
 });
 router.post('/login/:id', async (req, res) => {
   const { id } = req.params;
-  console.log('tut sessia', req.session.user.id);
   const login = await Comment.findAll({ where: { bookId: id }, include: User });
-  console.log('QWERTYUIOIUYTRERT', login);
   res.json(login);
 });
 

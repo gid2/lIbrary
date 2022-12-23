@@ -4,7 +4,6 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 export default function Mainpage() {
   const [allbooksMainPage, setAllbooksMainPage] = useState([]);
   const [likes, setLike] = useState('');
-  console.log(allbooksMainPage, '_+_+_+_+_+_+__');
 
   const Navigate = useNavigate();
   const { id } = useParams();
