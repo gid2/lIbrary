@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar({ userId }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-dark bg-dark">
         {userId
           ? (
             <>

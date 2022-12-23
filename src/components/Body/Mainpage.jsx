@@ -40,7 +40,11 @@ export default function Mainpage() {
     <div className="container text-center">
       <div className="row">
         <div className="col">
-          {
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap',
+          }}
+          >
+            {
             allbooksMainPage.map((el) => (
               <div className="cardcard text-bg-secondary mb-3" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
                 <img src={el.img} className="card-img-top" alt="..." />
@@ -49,7 +53,7 @@ export default function Mainpage() {
                   <p className="card-text">{el.title}</p>
                   <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
                   <form onSubmit={(e) => submitHendler(e, el.id)}>
-                    <button type="submit">
+                    <button type="submit" text-al>
                       <i className="bi bi-heart-fill" />
                       <svg color={likes} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
@@ -60,10 +64,13 @@ export default function Mainpage() {
               </div>
             ))
           }
+          </div>
         </div>
         <div className="col">
           <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Add book</a>
-        </div> <div className="col">
+        </div>
+        {' '}
+        <div className="col">
           <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">линый кабинет</a>
         </div>
       </div>
