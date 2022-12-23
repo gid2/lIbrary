@@ -43,11 +43,9 @@ export default function Book() {
       .then((response) => response.json())
       .then((data) => setBook(data));
     if (response.ok) {
-      window.location.href = `/favourite`;
+      window.location.href = '/favourite';
     } else if (
-      alert('книга не добавлена'))
-
-
+      alert('книга не добавлена')) {
       return (
         <>
           <div className="mb-3">
@@ -89,6 +87,7 @@ export default function Book() {
             ))}
           </form>
         </>
-      )
-  }
+      );
+    }
+  };
 }
