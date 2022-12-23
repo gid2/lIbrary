@@ -3,12 +3,22 @@ import { useParams } from 'react-router-dom';
 
 export default function Book() {
   const [book, setBook] = useState({});
-  consolema.log(book.Comments);
+  const [logins, setLogins] = useState([]);
+  const [likes, setLike] = useState('');
+
   const { id } = useParams();
   useEffect(() => {
     fetch(`/api/book/${id}`)
       .then((response) => response.json())
       .then((data) => setBook(data));
+  }, []);
+
+  useEffect(() => {
+    fetch(`/api/login/${id}`, {
+      method: 'POST',
+    })
+      .then((response) => response.json())
+      .then((data) => setLogins(data));
   }, []);
 
   const submitHandler = async (e) => {
@@ -35,32 +45,41 @@ export default function Book() {
         <img src={book.img} className="img-fluid" alt="" />
         <label htmlFor="exampleInputEmail1" className="form-label" />
       </div>
-      <div>
-        {' '}
-        Название:
-        <span>
-          {book.name}
-        </span>
-      </div>
-      <div>
-        {' '}
-        Author:
-        <span>
-          {book.author}
-        </span>
-      </div>
-      <div>
-        <span>
-          {book.title}
-        </span>
+      <div className="cardcard text-bg-secondary mb-3">
+        <div>
+          {' '}
+          Название:
+          <span>
+            {book.name}
+          </span>
+        </div>
+        <div>
+          {' '}
+          Author:
+          <span>
+            {book.author}
+          </span>
+        </div>
+        <div>
+          <span>
+            {book.title}
+          </span>
+        </div>
       </div>
       <form onSubmit={submitHandler}>
         {' '}
         <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        <button type="submit">добавить</button>
-        <ul>
-          {book?.Comments?.map((el) => <li>{el.comment}</li>)}
-        </ul>
+        <button type="submit" className="input-group-text">добавить</button>
+        {' '}
+        {logins?.map((el) => (
+          <div>
+            <h3>
+              {el?.User?.login}
+              :
+              {el?.comment}
+            </h3>
+          </div>
+        ))}
       </form>
     </>
   );

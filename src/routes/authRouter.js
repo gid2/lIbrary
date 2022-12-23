@@ -30,7 +30,6 @@ router.post('/reg', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-
   const { email, password } = req.body;
   const currUser = await User.findOne({ where: { email } });
   if (currUser) {
