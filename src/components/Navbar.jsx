@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar({ userId }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar" style={{ backgroundcolor: '#e3f2fd' }}>
         {userId
           ? (
             <>
@@ -30,6 +30,6 @@ export default function Navbar({ userId }) {
           )}
       </nav>
 
-    </div>
+    </div >
   );
 }
