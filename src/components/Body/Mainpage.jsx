@@ -42,12 +42,18 @@ export default function Mainpage() {
         <div className="col">
           {
             allbooksMainPage.map((el) => (
-              <div className="cardcard text-bg-secondary mb-3" style={{ marginLeft: '250px', width: '30rem', marginBottom: '30px' }} key={el.id}>
-                <img src={el.img} className="card-img-top" alt="..." />
+              <div
+                className="cardcard text-bg-secondary mb-3"
+                style={{
+                  marginLeft: '250px', width: '30rem', marginBottom: '30px', borderRadius: '10px', marginTop: '10px',
+                }}
+                key={el.id}
+              >
+                <img src={el.img} className="card-img-top" style={{ borderTopLeftRadius: '10px', borderTopRightRadius: '10px' }} alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{el.name}</h5>
                   <p className="card-text">{el.title}</p>
-                  <a className="btn btn-primary" onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
+                  <a className="btn btn-primary" style={{ marginBottom: " 7px"  }} onClick={() => Navigate(`/book/${el.id}`)}>перейти к книге</a>
                   <form onSubmit={(e) => submitHendler(e, el.id)}>
                     <button type="submit">
                       <i className="bi bi-heart-fill" />
@@ -62,9 +68,11 @@ export default function Mainpage() {
           }
         </div>
         <div className="col">
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Add book</a>
-        </div> <div className="col">
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">линый кабинет</a>
+          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Добавить книгу</a>
+        </div>
+        {' '}
+        <div className="col">
+          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">Личный кабинет</a>
         </div>
       </div>
     </div>
