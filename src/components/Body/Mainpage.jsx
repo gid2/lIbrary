@@ -48,8 +48,11 @@ export default function Mainpage() {
             allbooksMainPage.map((el) => (
               <div
                 className="cardcard text-bg-secondary mb-3"
+                // style={{
+                //   marginLeft: '200px', width: '30rem', marginBottom: '30px', borderRadius: '10px', marginTop: '10px',
+                // }}
                 style={{
-                  marginLeft: '250px', width: '30rem', marginBottom: '30px', borderRadius: '10px', marginTop: '10px',
+                  margin: '0 auto', width: '40rem', borderRadius: '10px', marginTop: '10px',
                 }}
                 key={el.id}
               >
@@ -71,21 +74,6 @@ export default function Mainpage() {
             ))
           }
           </div>
-        </div>
-        <div className="col">
-<<<<<<< HEAD
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Add book</a>
-        </div>
-        {' '}
-        <div className="col">
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">линый кабинет</a>
-=======
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/newbook" role="button">Добавить книгу</a>
-        </div>
-        {' '}
-        <div className="col">
-          <a className="btn btn-primary" style={{ position: 'fixed', marginTop: '270px' }} href="/favourite" role="button">Личный кабинет</a>
->>>>>>> 7e75f55344430a9ebdbfd26121ffe52e1edd8d2b
         </div>
       </div>
     </div>
