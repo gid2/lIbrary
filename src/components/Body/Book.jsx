@@ -78,7 +78,7 @@ export default function Book() {
       <form onSubmit={submitHandler}>
         {' '}
         <input name="comment" style={{ marginTop: '30px', marginBottom: '30px' }} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        <button type="submit" className="input-group-text">добавить</button>
+        <button type="submit" className="input-group-text" style={{ margin: '0 auto' }}>добавить</button>
         {' '}
         {logins?.map((el) => (
           <div>
